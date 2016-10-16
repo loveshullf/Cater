@@ -8,10 +8,24 @@ namespace Dal
 {
     public class ManagerInfoDal
     {
-        public List<ManagerInfo> GetList()
+        public List<ManagerInfo> GetList(ManagerInfo mi)
         {
-            List<ManagerInfo> list = new List<Model.ManagerInfo>();                                                                                                       
-            DataTable dt = SqliteHelper.GetList("select * from managerinfo");
+            List<ManagerInfo> list = new List<Model.ManagerInfo>();
+            string sql = "select * from managerinfo ";
+
+            List<SQLiteParameter> ps = new List<SQLiteParameter>(); 
+
+            if (mi != null)
+            {
+                sql += "where mname=@name and mpwd=@pwd";
+                ps.Add(new SQLiteParameter("@name", mi.MName));
+                ps.Add(new SQLiteParameter("@pwd", MD5Helper.GetMD5(mi.MPwd)));
+            }
+
+            DataTable dt = SqliteHelper.GetList(sql,ps.ToArray());
+
+           
+
             foreach (DataRow row in dt.Rows)
             {
                 list.Add(new ManagerInfo()

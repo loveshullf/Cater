@@ -13,7 +13,7 @@ namespace Bll
         public List<ManagerInfo> GetList()
         {
             ManagerInfoDal miDal = new ManagerInfoDal();
-            return miDal.GetList();
+            return miDal.GetList(null);
         }
         public bool Add(ManagerInfo mi)
         {
@@ -27,6 +27,20 @@ namespace Bll
         public bool Edit(ManagerInfo mi)
         {
             return miDal.Update(mi) > 0;
+        }
+        public bool Login(ManagerInfo mi)
+        {
+           var List = miDal.GetList(mi);
+            if (List.Count > 0)
+            {
+                mi.MType = List[0].MType;
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

@@ -35,6 +35,11 @@
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btnRemove = new System.Windows.Forms.Button();
+            this.btnCancel = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.radioMa = new System.Windows.Forms.RadioButton();
+            this.radioEm = new System.Windows.Forms.RadioButton();
             this.txtPwd = new System.Windows.Forms.TextBox();
             this.txtName = new System.Windows.Forms.TextBox();
             this.txtId = new System.Windows.Forms.TextBox();
@@ -42,11 +47,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.radioEm = new System.Windows.Forms.RadioButton();
-            this.radioMa = new System.Windows.Forms.RadioButton();
-            this.label4 = new System.Windows.Forms.Label();
-            this.btnCancel = new System.Windows.Forms.Button();
-            this.btnRemove = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.gv_ManagerInfoList)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -116,6 +116,39 @@
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.TabStop = false;
             // 
+            // btnRemove
+            // 
+            resources.ApplyResources(this.btnRemove, "btnRemove");
+            this.btnRemove.Name = "btnRemove";
+            this.btnRemove.UseVisualStyleBackColor = true;
+            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
+            // 
+            // btnCancel
+            // 
+            resources.ApplyResources(this.btnCancel, "btnCancel");
+            this.btnCancel.Name = "btnCancel";
+            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+            // 
+            // label4
+            // 
+            resources.ApplyResources(this.label4, "label4");
+            this.label4.Name = "label4";
+            // 
+            // radioMa
+            // 
+            resources.ApplyResources(this.radioMa, "radioMa");
+            this.radioMa.Name = "radioMa";
+            this.radioMa.UseVisualStyleBackColor = true;
+            // 
+            // radioEm
+            // 
+            resources.ApplyResources(this.radioEm, "radioEm");
+            this.radioEm.Checked = true;
+            this.radioEm.Name = "radioEm";
+            this.radioEm.TabStop = true;
+            this.radioEm.UseVisualStyleBackColor = true;
+            // 
             // txtPwd
             // 
             resources.ApplyResources(this.txtPwd, "txtPwd");
@@ -154,39 +187,6 @@
             resources.ApplyResources(this.label1, "label1");
             this.label1.Name = "label1";
             // 
-            // radioEm
-            // 
-            resources.ApplyResources(this.radioEm, "radioEm");
-            this.radioEm.Checked = true;
-            this.radioEm.Name = "radioEm";
-            this.radioEm.TabStop = true;
-            this.radioEm.UseVisualStyleBackColor = true;
-            // 
-            // radioMa
-            // 
-            resources.ApplyResources(this.radioMa, "radioMa");
-            this.radioMa.Name = "radioMa";
-            this.radioMa.UseVisualStyleBackColor = true;
-            // 
-            // label4
-            // 
-            resources.ApplyResources(this.label4, "label4");
-            this.label4.Name = "label4";
-            // 
-            // btnCancel
-            // 
-            resources.ApplyResources(this.btnCancel, "btnCancel");
-            this.btnCancel.Name = "btnCancel";
-            this.btnCancel.UseVisualStyleBackColor = true;
-            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
-            // 
-            // btnRemove
-            // 
-            resources.ApplyResources(this.btnRemove, "btnRemove");
-            this.btnRemove.Name = "btnRemove";
-            this.btnRemove.UseVisualStyleBackColor = true;
-            this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
-            // 
             // ManagerInfoList
             // 
             resources.ApplyResources(this, "$this");
@@ -194,6 +194,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "ManagerInfoList";
+            this.ShowIcon = false;
             this.Load += new System.EventHandler(this.ManagerInfoList_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gv_ManagerInfoList)).EndInit();
             this.groupBox1.ResumeLayout(false);

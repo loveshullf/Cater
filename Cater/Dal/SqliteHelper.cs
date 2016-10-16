@@ -12,12 +12,13 @@ namespace Dal
     {
         private static string connStr = ConfigurationManager.ConnectionStrings["conn"].ConnectionString;
 
-        public static DataTable GetList(string sql)
+        public static DataTable GetList(string sql,params SQLiteParameter[] ps)
         {
             //创建连接对象
             using (SQLiteConnection conn = new SQLiteConnection(connStr))
             {
                 SQLiteDataAdapter adapter = new SQLiteDataAdapter(sql, conn);
+                adapter.SelectCommand.Parameters.AddRange(ps);
                 DataTable dt = new DataTable();
                 adapter.Fill(dt);
                 return dt;
