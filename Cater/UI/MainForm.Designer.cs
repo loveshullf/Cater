@@ -56,15 +56,16 @@
             // menuManager
             // 
             this.menuManager.Name = "menuManager";
-            this.menuManager.Size = new System.Drawing.Size(72, 21);
-            this.menuManager.Text = "manager";
+            this.menuManager.Size = new System.Drawing.Size(56, 21);
+            this.menuManager.Text = "管理员";
             this.menuManager.Click += new System.EventHandler(this.menuManager_Click);
             // 
             // menuMenber
             // 
             this.menuMenber.Name = "menuMenber";
-            this.menuMenber.Size = new System.Drawing.Size(69, 21);
-            this.menuMenber.Text = "member";
+            this.menuMenber.Size = new System.Drawing.Size(68, 21);
+            this.menuMenber.Text = "会员管理";
+            this.menuMenber.Click += new System.EventHandler(this.menuMenber_Click);
             // 
             // menuDisk
             // 

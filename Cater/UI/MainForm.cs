@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace UI
@@ -37,8 +30,15 @@ namespace UI
 
         private void menuManager_Click(object sender, EventArgs e)
         {
-            ManagerInfoList miList = new ManagerInfoList();
+            var miList = new ManagerInfoList();
             miList.Show();
+        }
+
+        private void menuMenber_Click(object sender, EventArgs e)
+        {
+            MemberInfoList miList = FormFactory.CreateMemberInfoList();
+            miList.Show();
+            miList.Focus();
         }
     }
 }
