@@ -35,6 +35,7 @@
             this.menuTable = new System.Windows.Forms.ToolStripMenuItem();
             this.menuOrder = new System.Windows.Forms.ToolStripMenuItem();
             this.menuQuit = new System.Windows.Forms.ToolStripMenuItem();
+            this.tabHall = new System.Windows.Forms.TabControl();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -49,7 +50,7 @@
             this.menuQuit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(736, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(739, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -94,11 +95,22 @@
             this.menuQuit.Text = "quit";
             this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
             // 
+            // tabHall
+            // 
+            this.tabHall.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tabHall.Location = new System.Drawing.Point(0, 25);
+            this.tabHall.Name = "tabHall";
+            this.tabHall.SelectedIndex = 0;
+            this.tabHall.Size = new System.Drawing.Size(739, 378);
+            this.tabHall.TabIndex = 1;
+            this.tabHall.SelectedIndexChanged += new System.EventHandler(this.tabHall_SelectedIndexChanged);
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(736, 196);
+            this.ClientSize = new System.Drawing.Size(739, 403);
+            this.Controls.Add(this.tabHall);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "MainForm";
@@ -121,5 +133,6 @@
         private System.Windows.Forms.ToolStripMenuItem menuTable;
         private System.Windows.Forms.ToolStripMenuItem menuOrder;
         private System.Windows.Forms.ToolStripMenuItem menuQuit;
+        private System.Windows.Forms.TabControl tabHall;
     }
 }

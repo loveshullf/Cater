@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Windows.Forms;
+using Bll;
+using Model;
 
 namespace UI
 {
@@ -21,6 +23,21 @@ namespace UI
             //{
             //    menuManager.Visible = false;
             //}
+            LoadHallInfo();
+        }
+        //tablecontrol控件
+        private void LoadHallInfo()
+        {
+            HallInfoBll hiBll=new HallInfoBll();
+            var list = hiBll.GetList();
+
+            foreach (HallInfo hallInfo in list)
+            {
+                TabPage page=new TabPage(hallInfo.HTitle);
+                page.Tag = hallInfo.HId;
+                tabHall.TabPages.Add(page);
+            }
+            tabHall_SelectedIndexChanged(null, null);
         }
 
         private void menuQuit_Click(object sender, EventArgs e)
@@ -53,6 +70,31 @@ namespace UI
             TableInfoList tiListist = FormFactory.CreateTableInfoList();
             tiListist.Show();
             tiListist.Focus();
+        }
+
+        private void tabHall_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var tabPage = tabHall.SelectedTab;
+            int hid=Convert.ToInt32(tabPage.Tag);
+            TableInfoBll tiBll=new TableInfoBll();
+            TableInfo tiSearch=new TableInfo();
+            tiSearch.THallId = hid;
+            tiSearch.IsFreeSearch = -1;
+
+            var listTableInfo = tiBll.GetList(tiSearch);
+
+            ListView listView=new ListView();
+            listView.Dock = DockStyle.Fill;
+            foreach (TableInfo tableInfo in listTableInfo)
+            {
+                ListViewItem item1=new ListViewItem(tableInfo.TTitle);
+                ListViewItem item2 = new ListViewItem(tableInfo.TIsFree.ToString());
+                listView.Items.Add(item1);
+                listView.Items.Add(item2);
+            }
+
+            tabPage.Controls.Add(listView);
+
         }
     }
 }
