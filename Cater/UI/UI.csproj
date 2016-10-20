@@ -100,6 +100,12 @@
       <DependentUpon>DishTypeInfoList.cs</DependentUpon>
     </Compile>
     <Compile Include="FormFactory.cs" />
+    <Compile Include="HallInfoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HallInfoList.Designer.cs">
+      <DependentUpon>HallInfoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -132,11 +138,20 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TableInfoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TableInfoList.Designer.cs">
+      <DependentUpon>TableInfoList.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="DishInfoList.resx">
       <DependentUpon>DishInfoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DishTypeInfoList.resx">
       <DependentUpon>DishTypeInfoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HallInfoList.resx">
+      <DependentUpon>HallInfoList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
@@ -163,6 +178,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="TableInfoList.resx">
+      <DependentUpon>TableInfoList.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

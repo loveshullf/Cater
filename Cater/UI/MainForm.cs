@@ -47,5 +47,12 @@ namespace UI
             diList.Show();
             diList.Focus();
         }
+
+        private void menuTable_Click(object sender, EventArgs e)
+        {
+            TableInfoList tiListist = FormFactory.CreateTableInfoList();
+            tiListist.Show();
+            tiListist.Focus();
+        }
     }
 }

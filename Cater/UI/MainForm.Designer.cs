@@ -77,8 +77,9 @@
             // menuTable
             // 
             this.menuTable.Name = "menuTable";
-            this.menuTable.Size = new System.Drawing.Size(49, 21);
-            this.menuTable.Text = "table";
+            this.menuTable.Size = new System.Drawing.Size(68, 21);
+            this.menuTable.Text = "餐桌管理";
+            this.menuTable.Click += new System.EventHandler(this.menuTable_Click);
             // 
             // menuOrder
             // 

@@ -68,5 +68,30 @@ namespace UI
             return _dishInfoList;
         }
         #endregion
+        #region 餐桌管理
+        private static TableInfoList _tableInfoList;
+
+        public static TableInfoList CreateTableInfoList()
+        {
+            if (_tableInfoList == null || _tableInfoList.IsDisposed)
+            {
+                _tableInfoList = new TableInfoList();
+            }
+            return _tableInfoList;
+        }
+        #endregion
+        #region 包厅管理
+        private static HallInfoList _hallInfoList;
+
+        public static HallInfoList CreatehHallInfoList()
+        {
+            if (_dishInfoList == null || _dishInfoList.IsDisposed)
+            {
+                _hallInfoList = new HallInfoList();
+            }
+            return _hallInfoList;
+        }
+        #endregion
+
     }
 }
