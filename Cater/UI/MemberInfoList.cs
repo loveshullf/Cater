@@ -89,7 +89,7 @@ namespace UI
             txtMoneyAdd.Text = "";
             txtNameAdd.Text = "";
             txtPhoneAdd.Text = "";
-            cbType.SelectedIndex = 0;
+            cbType.Text="";
             btnSave.Text = "添加";
         }
 
@@ -150,10 +150,15 @@ namespace UI
         private void btnAddType_Click(object sender, EventArgs e)
         {
             MemberTypeInfoList mtiList = FormFactory.CreateMemberTypeInfoList();
+            mtiList.UpdateTypeEvent += UpdateType;
             mtiList.Show();
             mtiList.Focus();
         }
 
-      
+        private void UpdateType()
+        {
+            LoadList();
+            LoadTypeList();
+        }
     }
 }

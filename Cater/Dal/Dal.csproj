@@ -82,6 +82,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DishInfoDal.cs" />
+    <Compile Include="DishTypeInfoDal.cs">
+      <ExcludeFromStyleCop>False</ExcludeFromStyleCop>
+    </Compile>
     <Compile Include="ManagerInfoDal.cs" />
     <Compile Include="MemberInfoDal.cs" />
     <Compile Include="MemberTypeInfoDal.cs">

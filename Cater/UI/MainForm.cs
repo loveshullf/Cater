@@ -40,5 +40,12 @@ namespace UI
             miList.Show();
             miList.Focus();
         }
+
+        private void menuDisk_Click(object sender, EventArgs e)
+        {
+            DishInfoList diList = FormFactory.CreateDishInfoList();
+            diList.Show();
+            diList.Focus();
+        }
     }
 }

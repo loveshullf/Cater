@@ -70,8 +70,9 @@
             // menuDisk
             // 
             this.menuDisk.Name = "menuDisk";
-            this.menuDisk.Size = new System.Drawing.Size(44, 21);
-            this.menuDisk.Text = "dish";
+            this.menuDisk.Size = new System.Drawing.Size(68, 21);
+            this.menuDisk.Text = "菜单管理";
+            this.menuDisk.Click += new System.EventHandler(this.menuDisk_Click);
             // 
             // menuTable
             // 

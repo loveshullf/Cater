@@ -87,6 +87,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DishInfoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DishInfoList.Designer.cs">
+      <DependentUpon>DishInfoList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DishTypeInfoList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DishTypeInfoList.Designer.cs">
+      <DependentUpon>DishTypeInfoList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormFactory.cs" />
     <Compile Include="MainForm.cs">
       <SubType>Form</SubType>
@@ -120,6 +132,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="DishInfoList.resx">
+      <DependentUpon>DishInfoList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DishTypeInfoList.resx">
+      <DependentUpon>DishTypeInfoList.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
     </EmbeddedResource>
