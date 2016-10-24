@@ -31,5 +31,17 @@ namespace Dal
                 return cmd.ExecuteNonQuery();
             }
         }
+        //返回查询结果
+        public static object ExecuteScalar(string sql, params SQLiteParameter[] ps)
+        {
+            using (SQLiteConnection conn = new SQLiteConnection(connStr))
+            {
+                SQLiteCommand cmd=new SQLiteCommand(sql,conn);
+                cmd.Parameters.AddRange(ps);
+
+                conn.Open();
+                return cmd.ExecuteScalar();
+            }
+        }
     }
 }

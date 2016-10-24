@@ -77,23 +77,60 @@ namespace UI
             var tabPage = tabHall.SelectedTab;
             int hid=Convert.ToInt32(tabPage.Tag);
             TableInfoBll tiBll=new TableInfoBll();
+            //创建搜索table数据
             TableInfo tiSearch=new TableInfo();
             tiSearch.THallId = hid;
             tiSearch.IsFreeSearch = -1;
-
+            //tableList
             var listTableInfo = tiBll.GetList(tiSearch);
 
+            //listview 设置图片 风格 双击事件
             ListView listView=new ListView();
+            listView.MultiSelect = false;
+            listView.LargeImageList = imageList1;
+            listView.DoubleClick += ListView_DoubleClick;
             listView.Dock = DockStyle.Fill;
+
+            //listview 添加到 tabPage
             foreach (TableInfo tableInfo in listTableInfo)
             {
-                ListViewItem item1=new ListViewItem(tableInfo.TTitle);
-                ListViewItem item2 = new ListViewItem(tableInfo.TIsFree.ToString());
-                listView.Items.Add(item1);
-                listView.Items.Add(item2);
+                //图片索引 0为空闲 1位不空闲
+                ListViewItem item=new ListViewItem(tableInfo.TTitle, tableInfo.TIsFree?0:1);
+                item.Tag = tableInfo.TId;
+                listView.Items.Add(item);
             }
 
             tabPage.Controls.Add(listView);
+        }
+
+        private void ListView_DoubleClick(object sender, EventArgs e)
+        {
+            ListView listView = sender as ListView;
+            ListViewItem item = listView.SelectedItems[0];
+            int tableId = Convert.ToInt32(item.Tag);
+            
+            //状态为空闲 开单
+            //状态为非空闲 加菜
+            if (item.ImageIndex == 0)
+            {
+                item.ImageIndex = 1;
+                OrderInfoBll oiBll = new OrderInfoBll();
+                if (oiBll.KaiDan(tableId))
+                {
+                    
+                }
+            }
+            else
+            {
+                
+            }
+           //显示界面
+            OrderInfoList oiList = FormFactory.CreateOrderInfoList();
+            oiList.Tag = tableId;
+            oiList.Show();
+            oiList.Focus();
+
+
 
         }
     }

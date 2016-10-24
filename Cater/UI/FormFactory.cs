@@ -93,5 +93,21 @@ namespace UI
         }
         #endregion
 
+        #region 订单管理
+
+        private static OrderInfoList _orderInfoList;
+
+        public static OrderInfoList CreateOrderInfoList()
+        {
+            if (_orderInfoList == null || _orderInfoList.IsDisposed)
+            {
+                _orderInfoList = new OrderInfoList();
+            }
+            return _orderInfoList;
+        }
+
+
+        #endregion
+
     }
 }
