@@ -46,5 +46,10 @@ namespace Bll
         {
             return _oiDal.XiaDan(orderid, totalmoney) > 0;
         }
+
+        public decimal GetMoneyByTId(int tablid)
+        {
+            return _oiDal.GetMoneyByTId(tablid);
+        }
     }
 }

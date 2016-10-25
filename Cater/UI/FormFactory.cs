@@ -109,5 +109,19 @@ namespace UI
 
         #endregion
 
+        #region 结账界面
+
+        private static OrderPay _orderPay;
+
+        public static OrderPay CreateOrderPay()
+        {
+            if (_orderPay == null || _orderPay.IsDisposed)
+            {
+                _orderPay = new OrderPay();
+            }
+            return _orderPay;
+        }
+
+        #endregion
     }
 }

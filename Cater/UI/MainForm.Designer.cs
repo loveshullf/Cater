@@ -53,7 +53,7 @@
             this.menuQuit});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(739, 25);
+            this.menuStrip1.Size = new System.Drawing.Size(430, 25);
             this.menuStrip1.TabIndex = 0;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -88,14 +88,15 @@
             // menuOrder
             // 
             this.menuOrder.Name = "menuOrder";
-            this.menuOrder.Size = new System.Drawing.Size(53, 21);
-            this.menuOrder.Text = "order";
+            this.menuOrder.Size = new System.Drawing.Size(44, 21);
+            this.menuOrder.Text = "结账";
+            this.menuOrder.Click += new System.EventHandler(this.menuOrder_Click);
             // 
             // menuQuit
             // 
             this.menuQuit.Name = "menuQuit";
-            this.menuQuit.Size = new System.Drawing.Size(42, 21);
-            this.menuQuit.Text = "quit";
+            this.menuQuit.Size = new System.Drawing.Size(44, 21);
+            this.menuQuit.Text = "退出";
             this.menuQuit.Click += new System.EventHandler(this.menuQuit_Click);
             // 
             // tabHall
@@ -104,7 +105,7 @@
             this.tabHall.Location = new System.Drawing.Point(0, 25);
             this.tabHall.Name = "tabHall";
             this.tabHall.SelectedIndex = 0;
-            this.tabHall.Size = new System.Drawing.Size(739, 378);
+            this.tabHall.Size = new System.Drawing.Size(430, 304);
             this.tabHall.TabIndex = 1;
             this.tabHall.SelectedIndexChanged += new System.EventHandler(this.tabHall_SelectedIndexChanged);
             // 
@@ -119,7 +120,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(739, 403);
+            this.ClientSize = new System.Drawing.Size(430, 329);
             this.Controls.Add(this.tabHall);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;

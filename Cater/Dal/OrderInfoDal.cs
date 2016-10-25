@@ -58,6 +58,15 @@ namespace Dal
                 return SqliteHelper.ExecuteNonQuery(sql, ps1);
             }
         }
+
+        public decimal GetMoneyByTId(int tablid)
+        {
+            string sql = "select omoney from orderinfo where otableid=@tableid";
+            SQLiteParameter p=new SQLiteParameter("@tableid",tablid);
+
+            return Convert.ToDecimal(SqliteHelper.ExecuteScalar(sql, p));
+        }
+
         public List<OrderDetailInfo> GetDetaillist(int orderid)
         {
             List<OrderDetailInfo> list = new List<OrderDetailInfo>();

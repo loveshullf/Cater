@@ -17,5 +17,6 @@ namespace Model
 
         //查询结果
         public string TyptTitle { get; set; }
+        public decimal TypeDiscount { get; set; }
     }
 }

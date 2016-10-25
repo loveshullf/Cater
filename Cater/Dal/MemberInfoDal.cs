@@ -13,12 +13,18 @@ namespace Dal
     {
         public List<MemberInfo> GetList(MemberInfo mi)
         {
-            string sql = "select mi.*,mti.mtitle " +
+            //查询会有问题
+            string sql = "select mi.*,mti.mtitle,mti.mdiscount " +
                          "from memberinfo mi inner join membertypeinfo mti " +
                          "on mi.MTypeId==mti.MID " +
                          "where mi.MIsDelete=0";
 
             List<SQLiteParameter> listp = new List<SQLiteParameter>();
+            if (mi.Mid > 0)
+            {
+                sql += "  and mi.mid=@mid";
+                listp.Add(new SQLiteParameter("@mid",mi.Mid));
+            }
             if (!string.IsNullOrEmpty(mi.MName))
             {
                 sql += " and mi.mname like @name";
@@ -26,7 +32,7 @@ namespace Dal
             }
             if (!string.IsNullOrEmpty(mi.MPhone))
             {
-                sql += " and mi.mname like @phone";
+                sql += " and mi.mphone like @phone";
                 listp.Add(new SQLiteParameter("@phone", "%" + mi.MPhone + "%"));
             }
 
@@ -44,7 +50,8 @@ namespace Dal
                     MTypeId = Convert.ToInt32(row["mtypeid"]),
                     MPhone = row["mphone"].ToString(),
                     MName = row["mname"].ToString(),
-                    TyptTitle = row["mtitle"].ToString()
+                    TyptTitle = row["mtitle"].ToString(),
+                    TypeDiscount= Convert.ToDecimal(row["mdiscount"])
                 });
             }
             return list;
