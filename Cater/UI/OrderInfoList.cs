@@ -22,7 +22,7 @@ namespace UI
 
         private OrderInfoBll oiBll = new OrderInfoBll();
         private int orderId = -1;
-
+        //public event Action SetTableNotFreeEvent;
         private void OrderInfoList_Load(object sender, EventArgs e)
         {
             int tableId = Convert.ToInt32(Tag);
@@ -126,6 +126,8 @@ namespace UI
             decimal totalMomey = Convert.ToDecimal(lbl_TotalMoney.Text);
             if (oiBll.XiaDan(orderId, totalMomey))
             {
+                //SetTableIsNoFreeEvent()
+                
                 this.Close();
             }
         }

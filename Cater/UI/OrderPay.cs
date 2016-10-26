@@ -13,6 +13,7 @@ namespace UI
             InitializeComponent();
         }
        private OrderInfoBll oiBll = new OrderInfoBll();
+        public event Action SetTableFreeEvent;
         private void OrderPay_Load(object sender, EventArgs e)
         {
             gb_Member.Enabled = false;
@@ -58,11 +59,50 @@ namespace UI
                 lbl_TypeTitle.Text = mi.TyptTitle;
                 lbl_Discount.Text = mi.TypeDiscount.ToString();
                 lbl_PayMoney.Text = (mi.TypeDiscount*Convert.ToDecimal(lbl_TotalMoney.Text)).ToString();
+                cb_kMoney.Checked = false;
             }
             else
             {
                 MessageBox.Show("信息有误！请核对");
             }
+        }
+
+        
+        private void btn_OrderPay_Click(object sender, EventArgs e)
+        {
+            int tableid = Convert.ToInt32(this.Tag);
+            int memberid = 0;
+            if (!string.IsNullOrEmpty(txt_id.Text))
+            {
+                memberid = int.Parse(txt_id.Text);
+            }
+            decimal discount = 0;
+            if (!string.IsNullOrEmpty(lbl_Discount.Text))
+            {
+                discount = decimal.Parse(lbl_Discount.Text);
+            }
+            decimal payMoney = 0;
+            if (cb_kMoney.Checked == true)
+            {
+                decimal money = decimal.Parse(lbl_Money.Text);
+                payMoney = decimal.Parse(lbl_PayMoney.Text);
+                if (money <= payMoney)
+                {
+                    payMoney = money;
+                }
+            }
+
+            if (oiBll.JieZhang(tableid, memberid, discount, payMoney))
+            {
+                //窗口事件
+                SetTableFreeEvent();
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("error");
+            }
+ 
         }
     }
 }

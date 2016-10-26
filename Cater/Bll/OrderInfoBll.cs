@@ -51,5 +51,10 @@ namespace Bll
         {
             return _oiDal.GetMoneyByTId(tablid);
         }
+
+        public bool JieZhang(int tableid, int memberid, decimal discount, decimal paymoney)
+        {
+            return _oiDal.JieZhang(tableid, memberid, discount, paymoney) > 0;
+        }
     }
 }

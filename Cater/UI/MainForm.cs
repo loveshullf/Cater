@@ -117,10 +117,11 @@ namespace UI
             var item = listView.SelectedItems[0];
             var tableId = Convert.ToInt32(item.Tag);
 
-            //状态为空闲 开单
-            //状态为非空闲 加菜
+            //0状态为空闲 开单
+            //1状态为非空闲 加菜
             if (item.ImageIndex == 0)
             {
+                //更改餐桌显示状态
                 item.ImageIndex = 1;
                 var oiBll = new OrderInfoBll();
                 oiBll.KaiDan(tableId);
@@ -132,7 +133,6 @@ namespace UI
             oiList.Show();
             oiList.Focus();
         }
-
         private void menuOrder_Click(object sender, EventArgs e)
         {
             if (itemTable == null)
@@ -147,8 +147,14 @@ namespace UI
             }
             var op = FormFactory.CreateOrderPay();
             op.Tag = itemTable.Tag;
+            op.SetTableFreeEvent += Op_SetTableFree; 
             op.Show();
             op.Focus();
         }
+        private void Op_SetTableFree()
+        {
+            itemTable.ImageIndex = 0;
+        }
+      
     }
 }

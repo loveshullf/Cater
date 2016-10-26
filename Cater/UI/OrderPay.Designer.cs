@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gb_Member = new System.Windows.Forms.GroupBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
+            this.cb_kMoney = new System.Windows.Forms.CheckBox();
             this.lbl_Discount = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.lbl_TypeTitle = new System.Windows.Forms.Label();
@@ -44,15 +44,15 @@
             this.label10 = new System.Windows.Forms.Label();
             this.lbl_TotalMoney = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btn_OrderPay = new System.Windows.Forms.Button();
+            this.btn_Cancel = new System.Windows.Forms.Button();
             this.cb_Member = new System.Windows.Forms.CheckBox();
             this.gb_Member.SuspendLayout();
             this.SuspendLayout();
             // 
             // gb_Member
             // 
-            this.gb_Member.Controls.Add(this.checkBox2);
+            this.gb_Member.Controls.Add(this.cb_kMoney);
             this.gb_Member.Controls.Add(this.lbl_Discount);
             this.gb_Member.Controls.Add(this.label7);
             this.gb_Member.Controls.Add(this.lbl_TypeTitle);
@@ -70,15 +70,15 @@
             this.gb_Member.TabStop = false;
             this.gb_Member.Text = "会员信息";
             // 
-            // checkBox2
+            // cb_kMoney
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Location = new System.Drawing.Point(147, 86);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(72, 16);
-            this.checkBox2.TabIndex = 15;
-            this.checkBox2.Text = "使用余额";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.cb_kMoney.AutoSize = true;
+            this.cb_kMoney.Location = new System.Drawing.Point(147, 86);
+            this.cb_kMoney.Name = "cb_kMoney";
+            this.cb_kMoney.Size = new System.Drawing.Size(72, 16);
+            this.cb_kMoney.TabIndex = 15;
+            this.cb_kMoney.Text = "使用余额";
+            this.cb_kMoney.UseVisualStyleBackColor = true;
             // 
             // lbl_Discount
             // 
@@ -171,7 +171,7 @@
             // lbl_PayMoney
             // 
             this.lbl_PayMoney.AutoSize = true;
-            this.lbl_PayMoney.Location = new System.Drawing.Point(217, 192);
+            this.lbl_PayMoney.Location = new System.Drawing.Point(204, 192);
             this.lbl_PayMoney.Name = "lbl_PayMoney";
             this.lbl_PayMoney.Size = new System.Drawing.Size(11, 12);
             this.lbl_PayMoney.TabIndex = 11;
@@ -180,7 +180,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(146, 192);
+            this.label10.Location = new System.Drawing.Point(133, 192);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(65, 12);
             this.label10.TabIndex = 10;
@@ -204,23 +204,24 @@
             this.label12.TabIndex = 8;
             this.label12.Text = "消费金额：";
             // 
-            // button1
+            // btn_OrderPay
             // 
-            this.button1.Location = new System.Drawing.Point(12, 223);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "确认结账";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_OrderPay.Location = new System.Drawing.Point(12, 223);
+            this.btn_OrderPay.Name = "btn_OrderPay";
+            this.btn_OrderPay.Size = new System.Drawing.Size(75, 23);
+            this.btn_OrderPay.TabIndex = 12;
+            this.btn_OrderPay.Text = "确认结账";
+            this.btn_OrderPay.UseVisualStyleBackColor = true;
+            this.btn_OrderPay.Click += new System.EventHandler(this.btn_OrderPay_Click);
             // 
-            // button2
+            // btn_Cancel
             // 
-            this.button2.Location = new System.Drawing.Point(148, 223);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 13;
-            this.button2.Text = "暂不结账";
-            this.button2.UseVisualStyleBackColor = true;
+            this.btn_Cancel.Location = new System.Drawing.Point(148, 223);
+            this.btn_Cancel.Name = "btn_Cancel";
+            this.btn_Cancel.Size = new System.Drawing.Size(75, 23);
+            this.btn_Cancel.TabIndex = 13;
+            this.btn_Cancel.Text = "暂不结账";
+            this.btn_Cancel.UseVisualStyleBackColor = true;
             // 
             // cb_Member
             // 
@@ -239,8 +240,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(249, 253);
             this.Controls.Add(this.cb_Member);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_Cancel);
+            this.Controls.Add(this.btn_OrderPay);
             this.Controls.Add(this.lbl_PayMoney);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.lbl_TotalMoney);
@@ -276,9 +277,9 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lbl_TotalMoney;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.CheckBox checkBox2;
+        private System.Windows.Forms.Button btn_OrderPay;
+        private System.Windows.Forms.Button btn_Cancel;
+        private System.Windows.Forms.CheckBox cb_kMoney;
         private System.Windows.Forms.CheckBox cb_Member;
     }
 }
